@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Responsive Layout W/ Nav Toggle</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <script type="text/javascript">
+            // Wait for the entire DOM Content to load
+            document.addEventListener('DOMContentLoaded', function () {
+                // Store HTML elements as variables
+                const hamburger = document.getElementById('hamburger');
+                const navbar = document.getElementById('main-nav');
+        
+                // Ensure elements exist before adding event listeners
+                if (hamburger && navbar) {
+                    hamburger.addEventListener('click', function () {
+                        navbar.classList.toggle('show');
+                    });
+                }
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1 class="brand"><a href="#">Logo</a></h1>
+            <!-- Html entity starts with & and end with ; they contain character codes for special characters -->
+             <!-- this hamburger menu icon will hide on desktop, show on mobile, be absolutely positioned, clickable via JS to hide/show main nav -->
+             <span id="hamburger" class="mobile-menu">&#8801;</span>
+            <nav id="main-nav">
+                <ul class="menu">
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link2</a></li>
+                    <li><a href="#">link3</a></li>
+                    <li><a href="#">link4</a></li>
+                    <li><a href="#">link5</a></li>
+                    <li><a href="#">link6</a></li>
+                    <li><a href="#">link7</a></li>
+                
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+
+            <div class="thumb">
+                <img src="./silkie_chicken.webp" alt="silkie chicken">
+
+            </div>
+        </main>
+    </body>
+</html>

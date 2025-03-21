@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Gallery</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <style>
+                    .logoimage{
+                    width: 50px;
+                    height: 50px;
+                    margin: 10px;
+                 }
+
+    
+
+                    .thumb-container {
+                    column-count: 4; 
+                    column-gap: 10px;
+                    padding: 50px;
+            
+                }
+
+                .thumb {
+                    display: inline-block; 
+                    width: 100%;
+                    margin-bottom: 10px; 
+                }
+
+
+        </style>
+       
+        <script type="text/javascript">
+            // Wait for the entire DOM Content to load
+            document.addEventListener('DOMContentLoaded', function () {
+                // Store HTML elements as variables
+                const hamburger = document.getElementById('hamburger');
+                const navbar = document.getElementById('main-nav');
+        
+                
+                if (hamburger && navbar) {
+                    hamburger.addEventListener('click', function () {
+                        navbar.classList.toggle('show');
+                    });
+                }
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <img src="./img/logo.png" alt="logo" class="logoimage">
+            <!-- Html entity starts with & and end with ; they contain character codes for special characters -->
+             <!-- this hamburger menu icon will hide on desktop, show on mobile, be absolutely positioned, clickable via JS to hide/show main nav -->
+             <span id="hamburger" class="mobile-menu">&#8801;</span>
+            <nav id="main-nav">
+                <ul class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ContactUs.html">Contact Us</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <main class="thumb-container">
+            <div class="thumb">
+                <img src="./galleryimg/1.jpeg" alt="silkie chicken">
+
+            </div>
+
+           
+            <div class="thumb">
+                <img src="./galleryimg/2.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/3.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/4.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/5.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/6.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/7.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/8.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/9.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/10.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/11.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/12.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/13.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/14.jpeg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/15.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/16.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/17.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/18.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/19.jpg" alt="silkie chicken">
+
+            </div>
+
+
+            <div class="thumb">
+                <img src="./galleryimg/20.jpg" alt="silkie chicken">
+
+            </div>
+
+        </main>
+    </body>
+</html>

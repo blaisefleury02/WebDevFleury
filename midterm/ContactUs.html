@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale1" />
+        <title>Contact Me</title>
+       
+
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <style>
+             .logoimage{
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+            }
+
+            .contactbtnbar{
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row-reverse;
+          }
+
+        .contactbtn{
+            width: 100%;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-size: 2rem;
+            background-color: whitesmoke;
+            color:black;
+
+            
+
+        }
+
+        .contactbtn:hover{
+            background-color: rgb(142, 142, 142);
+            color:rgb(255, 255, 255);
+
+        }
+
+
+
+        .contactContainer {
+            width: 50%;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 0 auto;
+            color: var(--c-text);
+            background-color: #f4f4ef;
+            border: 2px solid black;
+        }
+
+        @media screen and (max-width:768px) {
+            .contactContainer {
+                width: 80%;
+            }
+        }
+        </style>
+
+<script type="text/javascript">
+    // Wait for the entire DOM Content to load
+    document.addEventListener('DOMContentLoaded', function () {
+        // Store HTML elements as variables
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('main-nav');
+
+        // Ensure elements exist before adding event listeners
+        if (hamburger && navbar) {
+            hamburger.addEventListener('click', function () {
+                navbar.classList.toggle('show');
+            });
+        }
+    });
+</script>
+
+    </head>
+
+    <header>
+        <img src="./img/logo.png" alt="logo" class="logoimage">
+        <!-- Html entity starts with & and end with ; they contain character codes for special characters -->
+         <!-- this hamburger menu icon will hide on desktop, show on mobile, be absolutely positioned, clickable via JS to hide/show main nav -->
+         <span id="hamburger" class="mobile-menu">&#8801;</span>
+        <nav id="main-nav">
+            <ul class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./ContactUs.html">Contact Us</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <body id="tech">
+
+
+
+       
+        <div class="contactContainer" id="blue">
+            <h1>Get In Touch!</h1>
+            <form action="https://formspree.io/f/mkgjnvyb" method="POST">
+                <div class="row1"> 
+                    <label for="name" class="label-lg">Name:</label>
+                    <input type="text" name="name" required class="input-lg"/> 
+                </div>
+                <div class="row2"> 
+                    <label for="email" class="label-lg">Email:</label>
+                    <input type="email" name="email" required class="input-lg"/>
+                </div>
+
+                <div class="message-area" class="label-lg">
+                    <label for="message" class="label-lg">Send us a message</label>
+                    <textarea name="message" required class="message"></textarea>
+                    
+                </div>
+
+                <div class="contactbtnbar">
+                    <button type="submit" class="contactbtn">Send</button>
+                </div>
+
+                <!-- hidden input to store/format my message subject -->
+
+                <input name="subject" type="hidden" value="New Submission from {{name}}" />
+            </form>
+        </div>
+
+    </body>
+</html>

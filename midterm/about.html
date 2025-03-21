@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <style>
+            .logoimage{
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+          }
+
+    
+
+            .aboutpage {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 100px;
+
+                padding: 20px;
+            
+        }
+
+            .headshot {
+                width: 300px;
+                height: auto;
+                border-radius: 10px;
+                float: left; 
+                margin-right: 20px; 
+                margin-top: 10px;
+            }
+
+            .aboutparagraph {
+                font-size: 20px;
+                line-height: 1.5;
+                margin-top: -30px;
+                font-weight: 50;
+            }
+            .redtext{
+                color: #ea3e25;
+            }
+
+        </style>
+       
+        <script type="text/javascript">
+            // Wait for the entire DOM Content to load
+            document.addEventListener('DOMContentLoaded', function () {
+                // Store HTML elements as variables
+                const hamburger = document.getElementById('hamburger');
+                const navbar = document.getElementById('main-nav');
+        
+                // Ensure elements exist before adding event listeners
+                if (hamburger && navbar) {
+                    hamburger.addEventListener('click', function () {
+                        navbar.classList.toggle('show');
+                    });
+                }
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <img src="./img/logo.png" alt="logo" class="logoimage">
+            <!-- Html entity starts with & and end with ; they contain character codes for special characters -->
+             <!-- this hamburger menu icon will hide on desktop, show on mobile, be absolutely positioned, clickable via JS to hide/show main nav -->
+             <span id="hamburger" class="mobile-menu">&#8801;</span>
+            <nav id="main-nav">
+                <ul class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ContactUs.html">Contact Us</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+       <main>
+        <div class="aboutpage">
+
+            <img src="./img/profilepic.jpg" alt="headshot" class="headshot">
+
+           
+
+            <p class="aboutparagraph">
+                It seems our government has it out for us. All the best cars never make it through the regulatory hurdles to sell in the United States.
+                I first encountered this dilemma when I was 18. I so longed for a japanese KEI truck, but didn't wan't to pay the heavy premium for a model already imported. 
+                That summmer, I figured out how to import my very own KEI truck from Japan. Since then I have imported over 13 vehicles from various different countries. 
+                My favorite cars are vintage british cars. These cars have so much class and presence. This company specializes in sourcing, restoring, and importing vintage 
+                Land Rover Defenders from all over the world. Rest assured, the mechanics, body shops, and freight forwarders we partner with are top-notch. <span class="redtext">We guarantee every 
+                    step of the process, and hope you will consider ordering a truck from us. </span>
+            </p>
+
+        </div>
+
+        
+
+       </main>
+       
+    </body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Main</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css" />
+        <!-- internal stylesheet to make my life less miserable -->
+        <style>
+
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet");
+
+        *{
+          
+            box-sizing: border-box;
+        }
+
+        
+
+            header{
+                height: 70px;
+            }
+
+            .logoimage{
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+            }
+
+            
+          .image-dropdown-container {
+                display: flex; 
+                flex-direction: column; 
+                
+                justify-content: center; 
+                align-items: center;
+                width: 100vw; 
+                max-width: 100%; 
+                
+                position: relative; 
+               
+               
+              
+            }
+
+
+            .product-image {
+                max-width: 900px;
+                height: auto;
+                position: center; 
+                z-index: 1; 
+                justify-content: center;
+                align-items: center;
+            
+                aspect-ratio: 3 / 2;
+            }
+
+           
+            .dropdown-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center; 
+                justify-content: center;
+                border: 2px solid black;
+            
+                margin-top: -50px; /* Move up to overlap image */
+                padding: 20px;
+                padding-top: 20px;
+                background-color: #f4f4ef;
+              border-radius: 1rem;
+                z-index: 999;
+                height: 400; 
+            }
+
+            .title-container {
+                margin-right: 40px;
+                display: flex;
+                flex-direction: column;
+                font-size: 14px;
+                text-align: center;
+            }
+
+           
+            .color-selector { 
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                padding: 10px;
+                border: 2px solid black;
+                font-size: 16px;
+                border-radius: 5px;
+                background-color: #white;
+               
+            }
+
+
+            .info_modal {
+        
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, 0.3);
+                z-index: 99999999;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 400ms ease-in;
+            
+      }
+
+                .info_modal:target {
+                
+                    opacity: 1;
+                
+                    pointer-events: auto;
+                }
+
+                .info_modal > div {
+                    margin-left: 30%;
+                    margin-top: 30%;
+                    width: 300px;
+                    height: 300px;
+                
+                    position: relative;
+                    padding: 2rem;
+                    background-color: rgb(235, 235, 235);
+                    border-radius: 5px;
+                    display: flex;
+                    flex-direction: column;
+
+                }
+
+                .order_button {
+                    margin-right: 10px;
+                    width: 70px;
+                    height: 50px;
+                    border-radius: 5px;
+                    background-color: #white;
+                    padding: 5px;
+                    margin-top: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center; 
+                    font-size: 16px; 
+                    color: #ea3d24; 
+                    text-decoration: none; 
+                    font-weight: bold;
+                    border: 2px solid black;
+
+                }
+
+                .order_button:hover {
+                    background-color: black;
+                }
+
+                .order_row{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 20px;
+                    padding: 10px;
+                }
+
+                .orderFormText{
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center; 
+                    font-size: 16px; 
+                }
+
+                .orderbtn{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: -10px;
+                    
+                }
+
+                .orderbtntext{
+                
+                    width: 100px;
+                    height: 40px !important;
+                    border-radius: 10px;
+                    border: 3px solid black; 
+                    background-color: whitesmoke;
+
+                }
+
+                .close {
+
+                    display: flex;
+                    height: 30px;
+                    width: 30px;
+                    background-color: black;
+                    color: white;
+                
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    transition: all 1s ease;
+                
+                    border-radius: 20px;
+                }
+
+      
+      
+
+
+           
+                                @media screen and (max-width:1024px) {
+                                    .dropdown-container {
+                                        margin-top: -50px
+                                    }
+                                    .color-selector {
+                                    
+                                    margin-bottom: 10px; /* Adds spacing between dropdowns */
+                                    padding: 5px;
+                                
+                                    margin-left: 30;
+                                    margin-right: 30;
+                                }
+
+                                .title-container {
+                                    font-size: 14px;
+                                }
+                                .order_button {
+                                    margin-top: 75px;
+                                }
+                                }
+                              
+                              
+                                @media screen and (max-width:768px) {
+                                    .image-dropdown-container {
+
+                                        flex-direction: column; 
+
+                                    }
+
+                                    .dropdown-container {
+                                        flex-direction: row;
+                                    }
+
+                                    .color-selector {
+                                    
+                                    margin-bottom: 10px; /* Adds spacing between dropdowns */
+                                    padding: 5px;
+                                
+                                    margin-left: 30;
+                                    margin-right: 30;
+                                }
+
+                                .title-container {
+                                    font-size: 10px;
+                                }
+                                
+                                .order_button {
+                                    margin-top: 45px;
+                                }
+
+                                .logoimage{
+                        
+                        
+                            margin: 20px;
+                          }
+
+                          
+
+
+
+
+
+                                
+
+                    }
+
+                        @media screen and (max-width: 560px) {
+                            .dropdown-container {
+                                flex-direction: column;  /* Stack items instead of keeping them in a row */
+                                align-items: center;  /* Center them horizontally */
+                                justify-content: center;
+                                width: 100%;  /* Ensure it stays inside the parent */
+                                padding: 10px;  /* Reduce padding for small screens */
+                                margin-top: 0; /* Prevent negative margins from breaking layout */
+                            }
+
+                            .title-container {
+                                width: 100%;  
+                                display: flex; /* Use flexbox */
+                                flex-direction: column; /* Stack title + dropdown */
+                                align-items: center; /* Center content horizontally */
+                                text-align: center;  
+                            }
+
+                            .color-selector {
+                                width: 80%;  /* Ensure dropdowns fit within container */
+                                max-width: 250px; /* Prevent them from becoming too big */
+                            }
+                        }
+        </style>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () {
+                // Store HTML elements as variables
+                const hamburger = document.getElementById('hamburger');
+                const navbar = document.getElementById('main-nav');
+                const image = document.querySelector('.image-dropdown-container img');
+                const dropdowns = document.querySelectorAll('select');
+                const hiddenSpecInput = document.getElementById('hiddenspec');
+        
+                // Ensure elements exist before adding event listeners
+                if (hamburger && navbar) {
+                    hamburger.addEventListener('click', function () {
+                        navbar.classList.toggle('show');
+                    });
+                }
+        
+                // Function to update image based on selected options
+                function updateImage() {
+                    const body = document.querySelectorAll('select')[0].value;
+                    const roof = document.querySelectorAll('select')[1].value;
+                    const wheels = document.querySelectorAll('select')[2].value;
+                    const interior = document.querySelectorAll('select')[3].value;
+        
+                    // Construct image filename (modify based on your naming convention)
+                    let imageName = `./img/${body}_${roof}_${wheels}.jpg`;
+
+                    console.log("Trying to load image:", `${imageName}`);
+        
+                    // Update image source
+                    image.src = `${imageName}`;
+                  
+                    hiddenSpecInput.value = imageName;
+                }
+        
+                // Attach event listeners to all dropdowns
+                dropdowns.forEach(select => {
+                    select.addEventListener('change', updateImage);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <img src="./img/logo.png" alt="logo" class="logoimage">
+            <!-- Html entity starts with & and end with ; they contain character codes for special characters -->
+             <!-- this hamburger menu icon will hide on desktop, show on mobile, be absolutely positioned, clickable via JS to hide/show main nav -->
+             <span id="hamburger" class="mobile-menu">&#8801;</span>
+            <nav id="main-nav">
+                <ul class="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./ContactUs.html">Contact Us</a></li>
+                    
+                   
+                </ul>
+            </nav>
+        </header>
+  
+     <div class="container">
+
+       
+        
+       
+
+       
+           
+    
+
+        <div class="image-dropdown-container">
+            
+            <img src="./img/green_black_white.jpg" alt="Land Rover" class="product-image">
+
+         <div class="dropdown-container">
+            <div class="title-container">
+                <h1 id="title2">BODY COLOR</h1>
+                <select onchange="changeColor(this, 'title2')" class="color-selector">
+                    
+                    <option value="green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="blue">Blue</option>
+                   
+                </select>
+            </div>
+            <div class="title-container">
+                <h1 id="title1">ROOF COLOR</h1>
+                <select onchange="changeColor(this, 'title1')" class="color-selector">
+                  
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                   
+                </select>
+            </div>
+           
+            <div class="title-container">
+                <h1 id="title3">WHEEL COLOR</h1>
+                <select onchange="changeColor(this, 'title3')" class="color-selector">
+                  
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                   
+                   
+                </select>
+            </div>
+            <div class="title-container">
+                <h1 id="title4">INTERIOR COLOR</h1>
+                <select onchange="changeColor(this, 'title4')" class="color-selector">
+                 
+                    <option value="tan">Tan</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                 
+                </select>
+            </div>
+
+                    <a href="#info2" class="order_button">ORDER NOW</a>
+
+          
+            <div id="info2" class="info_modal center">
+          
+            <div>
+               
+                <a href="#close" class="close">X</a>
+              
+              
+                    
+                    <form action="https://formspree.io/f/mkgjnvyb" method="POST">
+                        <div class="order_row"> 
+                            <label for="name" class="orderform">Name:</label>
+                            <input type="text" name="name" required class="orderform"/>
+                            <label for="email" class="orderform">Email:</label>
+                            <input type="email" name="email" required class="orderform"/>
+                            <div class="orderFormText">
+                                <h2>We'll be in touch!</h2>
+                            </div>
+                           
+                        </div>
+        
+                        
+        
+                        <div class="orderbtn">
+                            <button type="submit" class="orderbtntext">Send</button>
+                        </div>
+        
+                        <!-- hidden input to store/format my message subject -->
+        
+                        <input  name="subject" type="hidden" value="New Submission from {{name}}" />
+                        <input id="hiddenspec" name="spec" type="hidden"  />
+                    </form>
+              
+            </div>
+            </div>
+         </div>
+
+
+        
+   
+
+  
+
+    </body>
+</html>

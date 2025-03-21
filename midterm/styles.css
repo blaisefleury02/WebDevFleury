@@ -1,0 +1,261 @@
+/* gloabl styles
+
+*/
+
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+body {
+    margin: 0;
+  
+    background-color: #white;
+}
+
+img {
+    width: 100%;
+    height: auto;
+
+}
+
+/* desktop first design pattern */
+
+header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+   padding: 0 2rem;
+   position: relative;
+   
+
+}
+
+.brand {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a{
+    color: black;
+    text-decoration: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height
+}
+
+.menu li{
+    min-width: 5rem;
+    align-items: center;
+}
+
+.menu li a{
+    display: block;
+    padding: 1rem;
+
+}
+
+.menu li a:hover{
+    color:white;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+.container{
+    padding:2rem;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.thumb{
+    width: 23%;
+    margin: 2rem auto;
+}
+
+/* mobile laykout media queries */
+
+/* NOTE if you style desktop first, you want to get progressively smaller with each media query */
+
+
+/* TABLET */
+
+@media screen and (max-width:1024px) {
+
+    body{
+        background-color: white;
+
+    }
+
+    .thumb {
+        width: 45%;
+    }
+    
+}
+
+
+/* PHONE */
+
+@media screen and (max-width:768px) {
+
+    body{
+        background-color:white;
+    
+}
+
+header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+}
+
+.brand{
+    margin: 0.5rem;
+}
+
+.mobile-menu{
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    color: black;
+    font-size: 3rem;
+}
+.container{
+    flex-direction: column;
+}
+
+.thumb {
+    width: 90%;
+}
+.menu{
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.menu li {
+border-bottom:1px solid rgba(0,0,0, .4);
+}
+
+nav {
+    display: none;
+}
+.container{
+    flex-direction: column;
+}
+
+.show {
+    display: block;
+}
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet');
+
+:root{
+    --c-bg: #e2e8f0;
+
+    --c-text: #475569;
+
+    --c-bg-btn: #1e293b;
+
+    --c-btn-hover: #64748b;
+
+    --c-btn-text: #f8fafc;
+
+    --ff-heading: 'Press Start 2p', system-ui;
+
+   
+}
+
+
+
+/* apply diff id's for diff color thems */
+
+
+/* base styles */
+
+
+
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.label-lg{
+    font-size: 2rem;
+
+}
+
+.input-lg{
+    padding: 0.5rem;
+    border-radius: .25rem;
+    /* make the border a css var */
+    border: 1px solid grey;
+    margin-right: 3rem;
+
+}
+
+.message-area{
+    display:flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    font-size: 2rem;
+
+}
+
+.message {
+    height: 16rem;
+    border-radius: .5rem;
+    padding: 2 rem;
+}
+
+.btn-bar{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-dark{
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: var(--c-bg-btn);
+    color: var(--c-btn-text);
+
+}
+
+.btn-dark:hover{
+    background-color: var(--c-btn-hover);
+}
+
+
+
+body#tech, 
+body#tech button,
+body#tech input,
+
+
+
