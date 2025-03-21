@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>positioning</title>
+
+        <style type="text/css">
+            .abs_br {
+                width: 200px;
+                height: 200px;
+                background-color: blueviolet;
+                position: absolute;
+                bottom: 0px;
+                right: 200px;
+
+            }
+            .rel_tl {
+                width: 200px;
+                height: 200px;
+                background-color: black;
+                position: relative;
+                bottom: 50%;
+                right: 50%;
+
+            }
+
+            .abs_child {
+                width: 100px;
+                height: 100px;
+                background-color: aquamarine;
+                position: absolute;
+                top: 45px;
+                left: 300px;
+            }
+
+            .rel_parent {
+                width: 400px;
+                height: 400px;
+                background-color: brown;
+                position: relative;
+
+            }
+
+            .absolute_parent {
+                width: 600px;
+                height: 600px;
+                background-color: chartreuse;
+                position: absolute;
+                bottom: 200px;
+            right: 10px;
+            }
+
+            .cover {
+                position: fixed;
+                top: 0;
+                
+
+            }
+
+        </style>
+        <body>
+            <div class="abs_br"></div>
+
+            <div class="rel_tl"></div>
+
+            <div class="rel_parent">
+                <div class="abs_child"></div>
+            </div>
+
+            <div class="absolute_parent">
+                <div class="abs_child"></div>
+            </div>
+
+            <div class="fixed_top"></div>
+            <div class="cover"></div>
+
+        </body>
+    </head>
