@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors</title>
+<style>
+  body {
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f8ff;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .choices button{
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+      
+  }
+
+  #result {
+    margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+  }
+</style>
+
+<script type="text/javascript">
+    function playGame(userChoice) {
+        const choices = ['rock', 'paper', 'scissors'];
+        const computerChoice = choices[Math.floor(Math.random() * 3)]
+        const result = determineWinner(userChoice, computerChoice);
+
+        document.getElementById('result').innerHTML = `
+        You chose  ${userChoice}  <br>
+        The computer chose  ${computerChoice} <br>
+        
+        ${result}
+        `
+    }
+
+    function determineWinner(userChoice,computerChoice) {
+        if(userChoice === computerChoice) {
+            return "Tie!";
+        }
+        if(
+        (userChoice === 'rock' && computerChoice === 'scissors') ||
+        (userChoice === 'paper' && computerChoice === 'rock')  ||
+        (userChoice === 'scissors' && computerChoice === 'paper')){
+            return "You Win!";
+        } else {
+            return "The Computer Wins! You Lost HHAHAHAHAH";
+        }
+
+       
+
+
+    }
+</script>
+</head>
+
+<body>
+
+<h1>Rock, Paper, Scissors</h1>
+
+<div class="choices">
+    <button onClick="playGame ('rock')">🪨 Rock</button>
+    <button onClick="playGame ('paper')">📄 Paper</button>
+    <button onClick="playGame ('scissors')">✂️ Scissors</button>
+</div>
+
+<div id="result"></div>
+
+</body>
+</html>
