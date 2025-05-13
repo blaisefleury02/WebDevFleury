@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Asap:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Signika+Negative:300,400,700" rel="stylesheet" type="text/css">
+  
+  <style>
+
+body {
+  background-color: #f4ead6; 
+}
+.navbar-nav .nav-link,
+    .navbar-brand {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.0rem;
+    }
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  right: 2%;
+  height: 2px;
+  background-color: black;
+}
+
+.navbar {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.swatch-button {
+  border: 0;
+  background-color: #f4ead6;
+  border-radius: 20px;
+}
+
+.swatch-button img {
+  border-radius: 10px;
+}
+.image-dropdown-container {
+  margin: 5%;
+  display: flex;
+  flex-direction: row; 
+  gap: 1rem; 
+  background-color: #f4ead6;
+}
+
+.product-image {
+  border-radius: 20px  ;
+  
+}
+.imagecontainer {
+  width: 60%;
+  background-color: white;
+  margin-left: 5%;
+  border-radius: 20px  ;
+  
+ 
+}
+
+h1 {
+  font-family: "Signika Negative";
+  font-size: 2.0rem;
+  color: #54524b;
+}
+
+h3 {
+  font-family: "Signika Negative";
+  
+  color: #54524b;
+}
+
+.modal-body {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+}
+
+
+.modal-body .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.order_row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orderform {
+  font-size: 1rem;
+ 
+}
+
+.orderform input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  
+}
+
+.order-btn{
+  margin-top: 8%;
+  margin-left: 3%;
+  width: 100%;
+}
+
+.roverfooter {
+  background-color: #274737;
+  color: #f4ead6;
+  margin-top: 08%;
+}
+
+
+
+
+  </style>
+
+<script type="text/javascript" defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    const image = document.querySelector('.image-dropdown-container img');
+    const hiddenSpecInput = document.getElementById('hiddenspec');
+
+   
+    const config = {
+      body: 'green',
+      roof: 'black',
+      wheels: 'white'
+    };
+
+    function updateImage() {
+      const imageName = `./img/${config.body}_${config.roof}_${config.wheels}.jpg`;
+      console.log("Trying to load image:", imageName);
+
+      image.src = imageName;
+      if (hiddenSpecInput) hiddenSpecInput.value = imageName;
+    }
+
+
+    const buttons = document.querySelectorAll('button[data-role]');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const role = button.getAttribute('data-role');
+        const value = button.getAttribute('data-value');
+
+        if (role && value) {
+          config[role] = value;
+          updateImage();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+</head>
+<body>
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f4ead6;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">
+        <img src="logo.png" alt="Logo" height="110">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link"  href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./shippingcost.html">Cost</a>
+      </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="image-dropdown-container">
+
+    <div class="imagecontainer">
+      <img src="./img/green_black_white.jpg" alt="Land Rover" class="product-image img-fluid" style="max-width: 100%; height: auto;">
+    </div>
+            
+     
+    
+
+  <div class="dropdown-container">
+      <div class="title-container">
+          <h1 id="title2">Body Color</h1>
+          <button data-role="body" data-value="green" class="swatch-button">
+            <img src="./Swatches/pswatch_green.png" alt="Green" />
+          </button>
+          <button data-role="body" data-value="black" class="swatch-button">
+            <img src="./Swatches/pswatch_black.png" alt="Black" />
+          </button>
+          <button data-role="body" data-value="blue" class="swatch-button">
+            <img src="./Swatches/pswatch_blue.png" alt="Blue" />
+          </button>
+          </div>
+          
+        
+
+
+      <div class="title-container">
+         <h1 id="title1">Roof Color</h1>
+    
+        
+         <button data-role="roof" data-value="green" class="swatch-button">
+          <img src="./Swatches/pswatch_green.png" alt="Green" />
+        </button>
+        <button data-role="roof" data-value="black" class="swatch-button">
+          <img src="./Swatches/pswatch_black.png" alt="black" />
+        </button>
+        <button data-role="roof" data-value="blue" class="swatch-button">
+          <img src="./Swatches/pswatch_blue.png" alt="blue" />
+        </button>
+        <button data-role="roof" data-value="white" class="swatch-button">
+          <img src="./Swatches/pswatch_white.png" alt="White" />
+        </button>
+        
+    
+      </div>
+
+  <div class="title-container">
+      <h1 id="title3">Wheel Color</h1>
+      <button data-role="wheels" data-value="black" class="swatch-button">
+        <img src="./Swatches/pswatch_black.png" alt="Black" />
+      </button>
+      <button data-role="wheels" data-value="white" class="swatch-button">
+        <img src="./Swatches/pswatch_white.png" alt="white" />
+      </button>
+  </div> 
+  <div class="title-container">
+      <h1 id="title4">Interior Color</h1>
+      <button class="swatch-button">
+        <img src="./Swatches/lswatch_brown.png" alt="Tan"  />
+      </button>
+      <button class="swatch-button">
+        <img src="./Swatches/lswatch_black.png" alt="Black"  />
+      </button>
+      <button class="swatch-button">
+        <img src="./Swatches/lswatch_white.png" alt="White"  />
+      </button>
+
+    
+    
+</div>
+
+<button type="button" class="btn btn-dark order-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Order Now
+</button>
+
+<!-- Modal -->
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+      
+       <div class="modal-body">
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         <form action="https://formspree.io/f/mkgjnvyb" method="POST">
+           <div class="order_row"> 
+               <label for="name" class="orderform">Name:</label>
+               <input type="text" name="name" required class="orderform"/>
+               <label for="email" class="orderform">Email:</label>
+               <input type="email" name="email" required class="orderform"/>
+               <div class="orderFormText">
+                   <h3>We'll be in touch!</h3>
+               </div>
+              
+           </div>
+
+           
+
+           <button type="submit" class="btn btn-dark">Send</button>
+
+           <!-- hidden input to store/format my message subject -->
+
+           <input  name="subject" type="hidden" value="New Submission from {{name}}" />
+           <input id="hiddenspec" name="spec" type="hidden"  />
+       </form>
+       </div>
+      
+     </div>
+   </div>
+ </div>
+
+  </div>
+  </div>
+  <footer class="bg-dark text-white text-center text-lg-start mt-5">
+   
+  
+    <div class="text-center p-3 roverfooter ">
+      © 2025 West Bound Rovers. All rights reserved.
+    </div>
+  </footer>
+  
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
